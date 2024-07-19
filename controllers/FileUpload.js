@@ -8,7 +8,7 @@ exports.localFileUpload = async (req, res) => {
     const file = req.files.file;
     console.log("file aagyi h ->", file);
 
-    let path = __dirname + "/files/" + Date.now();
+    let path = __dirname + "/files/" + Date.now() + `.${file.name.split(".")}`;
     console.log("path->", path);
 
     file.mv(path, (err) => {
